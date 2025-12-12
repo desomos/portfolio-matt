@@ -69,7 +69,7 @@ header{
 }
 
 .category{
-    display: none;
+    display: flex;
     justify-content: space-around;
 }
 
@@ -85,7 +85,7 @@ header{
     display: flex;
     justify-content: center;
     width: 1000px;
-    padding: 330px 0px;
+    padding:  390px 0px;
     border-radius: 0px;
     margin: 15px 2px;
     transition: 0.5s;
@@ -96,15 +96,15 @@ header{
 }
 
 .category .card:nth-child(1) {
-    background-image: url('img/lafeve.png');
+    background-image: url('img/posters/voiture.JPG');
 }
 
 .category .card:nth-child(2) {
-    background-image: url('img/untitleqdqsdd.png');
+    background-image: url('img/fqsd.png');
 }
 
 .category .card:nth-child(3) {
-    background-image: url('img/fqsd.png');
+    background-image: url('img/peinture.JPG');
 }
 
 .category:hover .card {
@@ -216,24 +216,14 @@ footer {
 @media (max-width: 600px){
 
     .category {
-        display: none;
+        display: flex;
+        flex-direction: column;
     }
 
-    .category .card:nth-child(1) {
-        background-image: url('img/lafeve.png');
-        clip-path: polygon(0 0, 100% 10%, 100% 100%, 0 90%);
+    .category .card {
+        padding: 80px 0px;
     }
     
-    .category .card:nth-child(2) {
-        background-image: url('img/untitleqdqsdd.png');
-        clip-path: polygon(0 0, 100% 10%, 100% 100%, 0 90%);
-    }
-    
-    .category .card:nth-child(3) {
-        background-image: url('img/fqsd.png');
-        clip-path: polygon(0 0, 100% 10%, 100% 100%, 0 90%);
-    }
-
     .btn{
         padding: 0.5em 0.2em;
     }
