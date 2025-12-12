@@ -16,3 +16,4 @@ document.querySelectorAll(".list .image img").forEach(image => {
         };
     };
 });
+
