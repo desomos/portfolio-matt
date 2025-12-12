@@ -45,16 +45,17 @@ img{
 }
 
 header{
-    background-image: url(img/posters/josman-s-poster.jpg);
-    background-size: cover;
-    height: 200px;
+    background-image: url(img/logo.PNG);
+    background-size: contain;
+    background-position: center;
+    background-repeat: no-repeat;
+    height: 100px;
     margin-bottom: x;
     border-radius: 5px;
-
 }
 
 .category{
-    display: flex;
+    display: none;
     justify-content: space-around;
 }
 
@@ -198,6 +199,10 @@ footer {
 
 @media (max-width: 600px){
 
+    .category {
+        display: none;
+    }
+
     .category .card:nth-child(1) {
         background-image: url('img/lafeve.png');
         clip-path: polygon(0 0, 100% 10%, 100% 100%, 0 90%);
@@ -219,7 +224,7 @@ footer {
     .list{
         margin-left: 20px;
         margin-right: 20px;
-        column-count: 2;
+        column-count: 3;
         column-gap: 5px;
     }
 
@@ -227,30 +232,6 @@ footer {
     section{
         margin-left: 0px;
         margin-right: 0px;
-    }
-
-    header{
-        height: 100px;
-        margin-bottom: 10px;
-    }
-    .category{
-        display: flex;
-        flex-direction: column;
-        justify-content: space-around;
-        margin-bottom: 10px;
-    }
-    .category .card{
-        display: flex;
-        justify-content: center;
-        width: auto;
-        padding:100px 0px;
-        border-radius: 0px;
-        margin: -10px 0px;
-        transition: 0.5s;
-        background-size: cover;  /* Ensures the image covers the whole card */
-        background-position: center;  /* Centers the image */
-        background-repeat: no-repeat; /* Prevents tiling */
-    
     }
     
     .navbar{
