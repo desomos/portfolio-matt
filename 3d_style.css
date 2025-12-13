@@ -37,37 +37,7 @@ section{
     font-weight: bold;
     font-size: 17px;
 }
-#cursor {
-    pointer-events: none;
-    width: 1rem;
-    height: 1rem;
-    border: solid 1px rgba(34, 34, 34, 0.2);
-    border-radius: 50%;
-    position: fixed;
-    top: 0;
-    left: 0;
-    transition: 0.35s ease width, 0.35s ease height, 0.35s ease border, 0.35s ease background;
-    transform: translate(-50%, -50%);
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    color: #ffffff;
-    font-size: 18px;
-    font-family: 'Montserrat', sans-serif;
-    font-weight: bold;
-    background: seashell;
-    z-index: 1000;
-}
 
-#cursor.button {
-    width: 3rem;
-    height: 3rem;
-    border: 1px solid transparent;
-    background: rgb(255, 255, 255);
-}
-#cursor-text {
-    transform: rotate(-15deg); /* Texte incliné */
-}
 /*.background-overlay {
     position: absolute;
     top: 0;
@@ -178,7 +148,7 @@ header{
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
-    border: 1px solid white;
+    border: 1px solid rgb(255, 255, 255);
     border-radius: 5px;
     width: auto; /* Allow natural width */
     max-width: 90vw; /* Maximum width: 90% of the viewport width */
@@ -259,7 +229,26 @@ footer {
     .category .card {
         padding: 80px 0px;
     }
+
+    .navbar{
+    position: fixed;
+    top: 3%;
+    right: 3%;
+    width: 150px;
+    z-index: 999;
+    transition: 0.5s;
+    }
+
+.navbar a {
+    text-decoration: none;
+    color: white;
+    display: block;
+    text-align: center;
+    font-weight: bold;
+    font-size: 10px;
+}
     
+
     .btn{
         padding: 0.5em 0.2em;
     }
@@ -271,7 +260,17 @@ footer {
         margin-bottom: 10px;
     }
 
-    
+    header{
+    background-image: url(img/bannn.png);
+    background-size: contain;
+    background-repeat: no-repeat;
+    height: 50px;
+    margin-bottom: 20px;
+    margin-top: 20px;
+    margin-left: 10px;
+    padding: 0px;
+    border-radius: 5px;}
+
 
     section{
         margin-left: 0px;
