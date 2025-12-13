@@ -134,6 +134,11 @@ header{
     border-radius: 5px;
 }
 
+.main-content .content-wrapper {
+    display: flex;           /* flex horizontal */
+    gap: 20px;               /* espace entre catégories et images */
+}
+
 .header-click {
     position: absolute;
     inset: 0;
@@ -141,9 +146,12 @@ header{
 }
 
 
-.category{
+.category {
+    margin-top: 80px;
+    flex: 1;                 /* prend 1 partie de l’espace */
     display: flex;
-    justify-content: space-around;
+    flex-direction: row;
+    gap: 0px;               /* espace entre les cards */
 }
 
 .category a {
@@ -157,11 +165,11 @@ header{
 .category .card{
     display: flex;
     justify-content: center;
-    width: 1000px;
-    height: 196px;
-    padding:  390px 0px;
+    width: 100%;
+    height: 360px;
+    padding:  0px;
     border-radius: 0px;
-    margin: 15px 2px;
+    margin: 1px 2px;
     transition: 0.5s;
     background-size: cover;  /* Ensures the image covers the whole card */
     background-position: center;  /* Centers the image */
@@ -173,12 +181,12 @@ header{
     background-image: url('img/3D.jpg');
 }
 
-.category .card:nth-child(2) {
+.category .card:nth-child(3) {
     background-image: url('img/2D.jpg');
 }
 
-.category .card:nth-child(3) {
-    background-image: url('img/3D.jpg');
+.category .card:nth-child(2) {
+    background-image: url('img/other.jpg');
 }
 
 .category:hover .card {
@@ -191,12 +199,10 @@ header{
 
 
 
-.list{
-    margin-left: 70px;
-    margin-right: 70px;
-    column-count: 5;
-    column-gap: 3px;
-    
+.list {
+    flex: 3;                 /* prend plus de place pour les images */
+    column-count: 3;         /* ou 5 si tu veux */
+    column-gap: 10px;
 }
 
 
@@ -267,11 +273,12 @@ footer {
     .category {
         display: flex;
         flex-direction: column;
+        gap: 0px;
     }
 
     .category .card {
         padding: 0px 0px;
-        margin-bottom: 10px;
+        margin-bottom: 8px;
         height: 210px;
     }
 
@@ -306,11 +313,7 @@ footer {
         padding: 0.5em 0.2em;
     }
     .list{
-        margin-left: 10px;
-        margin-right: 10px;
-        column-count: 3;
-        column-gap: 3px;
-        margin-bottom: 10px;
+        display: none;
     }
 
     header{
@@ -324,6 +327,13 @@ footer {
     padding: 0px;
     border-radius: 5px;}
 
+    .category .card:nth-child(2) {
+    background-image: url('img/2D.jpg');
+}
+
+.category .card:nth-child(3) {
+    background-image: url('img/other.jpg');
+}
 
     section{
         margin-left: 0px;
