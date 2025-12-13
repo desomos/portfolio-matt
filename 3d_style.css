@@ -1,0 +1,298 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700;900&display=swap');
+
+* {
+    box-sizing: border-box;
+}
+
+
+
+body{
+    background-color: rgb(10, 10, 10);
+    background-size: cover;
+    margin-top: 20px;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 13px;
+}
+
+section{
+    margin-left: 0px;
+    margin-right: 0px;
+    
+}
+
+.navbar{
+    position: fixed;
+    top: 8%;
+    right: 3%;
+    width: 150px;
+    z-index: 999;
+    transition: 0.5s;
+}
+
+.navbar a {
+    text-decoration: none;
+    color: white;
+    display: block;
+    text-align: center;
+    font-weight: bold;
+    font-size: 17px;
+}
+#cursor {
+    pointer-events: none;
+    width: 1rem;
+    height: 1rem;
+    border: solid 1px rgba(34, 34, 34, 0.2);
+    border-radius: 50%;
+    position: fixed;
+    top: 0;
+    left: 0;
+    transition: 0.35s ease width, 0.35s ease height, 0.35s ease border, 0.35s ease background;
+    transform: translate(-50%, -50%);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #ffffff;
+    font-size: 18px;
+    font-family: 'Montserrat', sans-serif;
+    font-weight: bold;
+    background: seashell;
+    z-index: 1000;
+}
+
+#cursor.button {
+    width: 3rem;
+    height: 3rem;
+    border: 1px solid transparent;
+    background: rgb(255, 255, 255);
+}
+#cursor-text {
+    transform: rotate(-15deg); /* Texte incliné */
+}
+/*.background-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: url('img/pngegg.png');
+    background-size: 100px 100px;
+    background-position: top left;
+    background-repeat: repeat;
+    z-index: 9999;
+    pointer-events: none;
+}*/
+
+img{
+    width: 100%;
+    border-radius: 0px;
+    display: block;
+    margin-bottom: 3px;
+    break-inside: avoid;
+}
+
+header{
+    background-image: url(img/bannn.png);
+    background-size: contain;
+
+    background-repeat: no-repeat;
+    height: 100px;
+    margin: 20px;
+    margin-top: 20px;
+    padding: 70px;
+    border-radius: 5px;
+}
+
+.category{
+    display: flex;
+    justify-content: space-around;
+}
+
+.category a {
+    text-decoration: none;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    color: aliceblue;
+    text-shadow: 0 0 10px rgba(105, 104, 104, 0.8), 0 0 20px rgba(0, 0, 0, 0.6);
+    font-weight: bold;
+}
+
+.category .card{
+    display: flex;
+    justify-content: center;
+    width: 1000px;
+    padding:  390px 0px;
+    border-radius: 0px;
+    margin: 15px 2px;
+    transition: 0.5s;
+    background-size: cover;  /* Ensures the image covers the whole card */
+    background-position: center;  /* Centers the image */
+    background-repeat: no-repeat; /* Prevents tiling */
+
+}
+
+.category .card:nth-child(1) {
+    background-image: url('img/3D.JPG');
+}
+
+.category .card:nth-child(2) {
+    background-image: url('img/3D.jpg');
+}
+
+.category .card:nth-child(3) {
+    background-image: url('img/3D.jpg');
+}
+
+.category:hover .card {
+    filter: grayscale(0.8) blur(1px);
+}
+
+.category .card:hover {
+    filter: none; /* Remove grayscale effect */
+}
+
+
+
+.list{
+    margin-left: 70px;
+    margin-right: 70px;
+    column-count: 5;
+    column-gap: 3px;
+    
+}
+
+
+
+.popup-image {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.815);
+    z-index: 100;
+    transition: opacity 0.3s ease-in-out;
+}
+
+.popup-image img {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    border: 1px solid white;
+    border-radius: 5px;
+    width: auto; /* Allow natural width */
+    max-width: 90vw; /* Maximum width: 90% of the viewport width */
+    max-height: 90vh; /* Maximum height: 90% of the viewport height */
+    object-fit: contain; /* Ensures the full image is visible */
+}
+
+
+
+footer {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center; /* Or space-between */
+    align-items: center;
+    margin-bottom: 10px;
+    overflow: hidden; /* Prevent content from overflowing */
+    max-width: 100%;
+}
+
+.btn{
+    padding: 0.8em 1.5em;
+    text-decoration: none;
+    color: white;
+    font-size: 20px;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    transition: 200ms ease-in-out;
+    font-weight: bold;
+}
+
+.bug-text{
+    user-select: none;
+    width: 9em;  
+}
+
+
+
+@media (max-width: 1000px){
+
+
+    body {
+        max-width: 100%;
+        overflow-x: hidden;
+    }
+    .category{
+        margin-top: 0px;
+    }
+    .category .card{
+
+        display: flex;
+        justify-content: center;
+        width: 100%;
+        padding:150px 0px;
+        border-radius: 0px;
+        margin: 2px 2px;
+        transition: 0.5s;
+        background-size: cover;  /* Ensures the image covers the whole card */
+        background-position: center;  /* Centers the image */
+        background-repeat: no-repeat; /* Prevents tiling */
+    
+    }
+    .navbar{
+        position: fixed;
+        top: 4%;
+        right: 3%;
+        width: 100px;
+        z-index: 9999;
+        transition: 0.5s;
+    }
+}
+
+@media (max-width: 600px){
+
+    .category {
+        display: flex;
+        flex-direction: column;
+    }
+
+    .category .card {
+        padding: 80px 0px;
+    }
+    
+    .btn{
+        padding: 0.5em 0.2em;
+    }
+    .list{
+        margin-left: 10px;
+        margin-right: 10px;
+        column-count: 2;
+        column-gap: 3px;
+        margin-bottom: 10px;
+    }
+
+    section{
+        margin-left: 0px;
+        margin-right: 0px;
+    }
+    
+    .navbar{
+        position: fixed;
+        top: 4%;
+        right: 3%;
+        width: 60px;
+        z-index: 9999;
+        transition: 0.5s;
+    }
+
+    footer {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center; /* Or space-between */
+    align-items: center;
+    margin-bottom: 20px;
+    overflow: hidden; /* Prevent content from overflowing */
+    max-width: 100%;
+}
+
+}

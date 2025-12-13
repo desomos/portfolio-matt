@@ -16,35 +16,16 @@
     <section>
     <div class="category">
         <a href="3d.html" class="card">
-            <h1>3D</h1>
+            
         </a>
         <a href="posters.html" class="card">
-            <h1>posters</h1>
+            
         </a>
         <a href="peintures.html" class="card">
-            <h1>peintures</h1>
+            
         </a>
     </div>
     
-    <div class="list">
-        <div class="image"><img src="img/posters/voiture.JPG" alt=""></div>
-        <div class="image"><img src="img/posters/chateau.JPG" alt=""></div>
-        <div class="image"><img src="img/posters/femtogo.JPG" alt=""></div>
-        <div class="image"><img src="img/posters/jo23.JPG" alt=""></div>
-        <div class="image"><img src="img/untitleqdqsdd.png" alt=""></div>
-        <div class="image"><img src="img/posters/lafeve.JPG" alt=""></div>
-        <div class="image"><img src="img/posters/LAFV&.JPG" alt=""></div>
-        <div class="image"><img src="img/posters/SML.JPG"></div>
-        <div class="image"><img src="img/fqsd.png" alt=""></div>
-        <div class="image"><img src="img/posters/luther-s-poster.jpg" alt=""></div>
-        <div class="image"><img src="img/luther-s-poster.jpg" alt=""></div>
-        <div class="image"><img src="img/posters/selug.JPG" alt=""></div>
-        <div class="image"><img src="img/IMG_2530.JPG" alt=""></div>
-        <div class="image"><img src="img/posters/rap caté.JPG" alt=""></div>
-        <div class="image"><img src="img/posters/josman-s-poster.jpg" alt=""></div>
-        <div class="image"><img src="img/posters/Khali 50x70.jpg" alt=""></div>
-        <div class="image"><img src="img/posters/novae.jpg" alt=""></div>
-    </div>
     
     <!-- Add the Popup Container -->
     <div class="popup-image">
@@ -63,44 +44,7 @@
 
 
     <script>
-const cursor = document.getElementById('cursor');
-const cursorText = document.getElementById('cursor-text');
 
-// Elements that trigger hover
-const hoverElements = document.querySelectorAll('.btn span, .navbarr, .card h1');
-
-let mouseX = 0, mouseY = 0;
-let cursorX = 0, cursorY = 0;
-const speed = 0.15;
-
-document.addEventListener('mousemove', e => {
-    mouseX = e.clientX;
-    mouseY = e.clientY;
-});
-
-// Hover effect
-hoverElements.forEach(el => {
-    el.addEventListener('mouseenter', () => {
-        cursor.classList.add('button');
-        cursorText.textContent = "Explore"; // Add text
-    });
-    el.addEventListener('mouseleave', () => {
-        cursor.classList.remove('button');
-        cursorText.textContent = ""; // Remove text
-    });
-});
-
-// Animation loop
-function animate() {
-    cursorX += (mouseX - cursorX) * speed;
-    cursorY += (mouseY - cursorY) * speed;
-
-    cursor.style.transform = `translate(${cursorX - cursor.offsetWidth / 2}px, ${cursorY - cursor.offsetHeight / 2}px)`;
-
-    requestAnimationFrame(animate);
-}
-
-animate();
 
 </script>
 <script src="main.js"></script>
