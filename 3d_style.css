@@ -4,6 +4,11 @@
     box-sizing: border-box;
 }
 
+.header-link {
+    display: block;
+    text-decoration: none;
+}
+
 
 
 body{
@@ -63,13 +68,19 @@ img{
 header{
     background-image: url(img/bannn.png);
     background-size: contain;
-
+    position: relative;
     background-repeat: no-repeat;
     height: 100px;
     margin: 20px;
     margin-top: 20px;
     padding: 70px;
     border-radius: 5px;
+}
+
+.header-click {
+    position: absolute;
+    inset: 0;
+    z-index: 10;
 }
 
 .category{
