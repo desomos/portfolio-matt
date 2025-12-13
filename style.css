@@ -100,7 +100,7 @@ header{
 }
 
 .category .card:nth-child(1) {
-    background-image: url('img/3D.JPG');
+    background-image: url('img/3D.jpg');
 }
 
 .category .card:nth-child(2) {
@@ -238,8 +238,9 @@ footer {
     background-size: contain;
     background-repeat: no-repeat;
     height: 50px;
-    margin: 20px;
+    margin-bottom: 20px;
     margin-top: 20px;
+    margin-left: 10px;
     padding: 0px;
     border-radius: 5px;}
 
