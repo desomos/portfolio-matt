@@ -25,6 +25,9 @@ section{
     
 }
 
+
+
+
 .navbar{
     position: fixed;
     top: 8%;
@@ -192,6 +195,32 @@ footer {
 .bug-text{
     user-select: none;
     width: 9em;  
+}
+
+/* --- VIDEO THUMB --- */
+.image.video {
+    position: relative;
+    cursor: pointer;
+}
+
+.play-icon {
+    position: absolute;
+    inset: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 60px;
+    color: white;
+    text-shadow: 0 0 20px black;
+    pointer-events: none;
+}
+
+/* --- POPUP VIDEO --- */
+.popup-image video {
+    display: none;
+    max-width: 90vw;
+    max-height: 90vh;
+    border-radius: 5px;
 }
 
 
