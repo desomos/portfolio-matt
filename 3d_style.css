@@ -28,13 +28,13 @@ header {
 /* Icône menu fixe */
 #menu-toggle {
     position: fixed;       /* Fixe sur la page */
-    top: 20px;             /* Distance du haut */
-    right: 20px;           /* Distance de la droite */
+    top: 0px;             /* Distance du haut */
+    right: 0px;           /* Distance de la droite */
     z-index: 10001;        /* Au-dessus de tout */
 }
 
 .menu-icon {
-    width: 40px;           /* Taille de l’icône */
+    width: 100px;           /* Taille de l’icône */
     cursor: pointer;
 }
 
