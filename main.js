@@ -1,19 +1,14 @@
+const popup = document.querySelector('.popup-image');
+const popupImg = popup.querySelector('img');
 
-
-document.querySelectorAll(".list .image img").forEach(image => {
-    image.onclick = () => {
-        const popup = document.querySelector(".popup-image");
-        const popupImg = popup.querySelector("img");
-        
-        popup.style.display = "block";
-        popupImg.src = image.getAttribute("src");
-
-        // Close popup when clicking outside the image
-        popup.onclick = (e) => {
-            if (e.target !== popupImg) {
-                popup.style.display = "none";
-            }
-        };
-    };
+document.querySelectorAll('.image img').forEach(img => {
+    img.addEventListener('click', () => {
+        popup.style.display = 'block';
+        popupImg.src = img.dataset.full;
+    });
 });
 
+popup.addEventListener('click', () => {
+    popup.style.display = 'none';
+    popupImg.src = '';
+});
