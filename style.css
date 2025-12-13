@@ -191,10 +191,12 @@ header{
 
 .category:hover .card {
     filter: grayscale(0.8) blur(1px);
+    transform: scale(1);
 }
 
 .category .card:hover {
     filter: none; /* Remove grayscale effect */
+    transform: scale(1.03);
 }
 
 
