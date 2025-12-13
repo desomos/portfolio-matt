@@ -39,7 +39,7 @@ section{
     display: none; /* caché par défaut */
     position: fixed;
     inset: 0;
-    background: rgba(0, 0, 0, 0.85); /* semi-transparent */
+    background: rgba(0, 0, 0, 0.7); /* semi-transparent */
     z-index: 10000;
     backdrop-filter: blur(5px); /* léger flou */
     transition: opacity 0.3s ease;
