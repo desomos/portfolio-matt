@@ -130,7 +130,7 @@ header{
 }
 
 .category .card:nth-child(1) {
-    background-image: url('img/3D.JPG');
+    background-image: url('img/3D.jpg');
 }
 
 .category .card:nth-child(2) {
