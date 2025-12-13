@@ -243,43 +243,14 @@ footer {
 
 
 
+
+
 @media (max-width: 1000px){
 
 
-    body {
-        max-width: 100%;
-        overflow-x: hidden;
-    }
-    .category{
-        margin-top: 0px;
-    }
-    .category .card{
-
-        display: flex;
-        justify-content: center;
-        width: 100%;
-        padding:150px 0px;
-        border-radius: 0px;
-        margin: 2px 2px;
-        transition: 0.5s;
-        background-size: cover;  /* Ensures the image covers the whole card */
-        background-position: center;  /* Centers the image */
-        background-repeat: no-repeat; /* Prevents tiling */
     
-    }
-    .navbar{
-        position: fixed;
-        top: 4%;
-        right: 3%;
-        width: 100px;
-        z-index: 9999;
-        transition: 0.5s;
-    }
-}
-
-@media (max-width: 600px){
-
     .category {
+        margin-top: 0px;
         display: flex;
         flex-direction: column;
         gap: 0px;
@@ -289,6 +260,7 @@ footer {
         padding: 0px 0px;
         margin-bottom: 8px;
         height: 210px;
+        
     }
 
     .navbar{
