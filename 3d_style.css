@@ -4,9 +4,86 @@
     box-sizing: border-box;
 }
 
-.header-link {
+header {
+    background-image: url(img/bannn.png);
+    background-size: contain;
+    background-repeat: no-repeat;
+    position: relative;
+    height: 100px;
+    margin: 20px;
+    margin-top: 20px;
+    padding: 70px;
+    border-radius: 5px;
+}
+
+/* Lien invisible sur tout le header */
+.header-click {
+    position: absolute;
+    inset: 0;          /* top:0; bottom:0; left:0; right:0 */
+    z-index: 1;        /* derrière le menu */
     display: block;
+}
+
+
+/* Icône menu fixe */
+#menu-toggle {
+    position: fixed;       /* Fixe sur la page */
+    top: 20px;             /* Distance du haut */
+    right: 20px;           /* Distance de la droite */
+    z-index: 10001;        /* Au-dessus de tout */
+}
+
+.menu-icon {
+    width: 40px;           /* Taille de l’icône */
+    cursor: pointer;
+}
+
+
+/* Menu overlay */
+#menu-overlay {
+    display: none; /* caché par défaut */
+    position: fixed;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.85); /* semi-transparent */
+    z-index: 10000;
+    backdrop-filter: blur(5px); /* léger flou */
+    transition: opacity 0.3s ease;
+}
+
+/* Contenu du menu */
+.menu-content {
+    width: 250px;
+    height: 100%;
+    background: rgba(30, 30, 30, 0.9);
+    padding: 50px 20px;
+    box-shadow: 2px 0 10px rgba(0,0,0,0.5);
+}
+
+.menu-content ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.menu-content li {
+    margin-bottom: 20px;
+}
+
+.menu-content li a {
+    color: white;
     text-decoration: none;
+    font-size: 20px;
+    font-weight: bold;
+    transition: 0.2s;
+}
+
+.menu-content li a:hover {
+    color: #f0a500;
+}
+
+/* Activer l'affichage */
+#menu-overlay.active {
+    display: block;
 }
 
 
