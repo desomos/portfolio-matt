@@ -23,11 +23,10 @@ menuToggle.addEventListener('click', (e) => {
 });
 
 // Fermer le menu si on clique en dehors (overlay)
-menuOverlay.addEventListener('click', (e) => {
-    if(e.target === menuOverlay) {
-        menuOverlay.classList.remove('active');
-    }
+menuOverlay.addEventListener('click', () => {
+    menuOverlay.classList.remove('active');
 });
+
 
 
 
