@@ -9,6 +9,17 @@ html{
     scroll-behavior: smooth;
 }
 
+.etxt{
+    color: #f0a500;
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    font-size: 25px;
+    text-align: left;
+    margin-bottom: 20px;
+    user-select: none;
+    font-weight: lighter;
+    font-style: italic;
+}
+
 
 body{
     background-color: rgb(10, 10, 10);
