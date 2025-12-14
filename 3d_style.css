@@ -295,7 +295,7 @@ header{
 .popup-bottom {
     display: none;
     position: absolute;
-    bottom: 150px;
+    bottom: 30px;
     left: 50%;
     transform: translateX(-50%);
     align-items: center;
