@@ -1,32 +1,74 @@
 const popup = document.querySelector('.popup-image');
 const popupImg = popup.querySelector('img');
+const images = Array.from(document.querySelectorAll('.image img'));
 
-document.querySelectorAll('.image img').forEach(img => {
+let currentIndex = 0;
+
+/* --- OUVERTURE POPUP --- */
+images.forEach((img, index) => {
     img.addEventListener('click', () => {
+        currentIndex = index;
+        showImage();
         popup.style.display = 'block';
-        popupImg.src = img.dataset.full;
     });
 });
 
-popup.addEventListener('click', () => {
-    popup.style.display = 'none';
-    popupImg.src = '';
+function showImage() {
+    popupImg.src = images[currentIndex].dataset.full;
+}
+
+/* --- FERMETURE POPUP --- */
+popup.addEventListener('click', (e) => {
+    if (e.target === popup) {
+        popup.style.display = 'none';
+        popupImg.src = '';
+    }
 });
 
-const menuToggle = document.getElementById('menu-toggle');
-const menuOverlay = document.getElementById('menu-overlay');
+/* --- NAVIGATION --- */
+function nextImage() {
+    currentIndex = (currentIndex + 1) % images.length;
+    showImage();
+}
 
-// Ouvrir ou fermer le menu avec le même bouton
-menuToggle.addEventListener('click', (e) => {
-    e.preventDefault();
-    menuOverlay.classList.toggle('active'); // toggle au lieu de add
+function prevImage() {
+    currentIndex = (currentIndex - 1 + images.length) % images.length;
+    showImage();
+}
+
+/* --- CLAVIER (desktop) --- */
+document.addEventListener('keydown', (e) => {
+    if (popup.style.display !== 'block') return;
+
+    if (e.key === 'ArrowRight') nextImage();
+    if (e.key === 'ArrowLeft') prevImage();
+    if (e.key === 'Escape') popup.click();
 });
 
-// Fermer le menu si on clique en dehors (overlay)
-menuOverlay.addEventListener('click', () => {
-    menuOverlay.classList.remove('active');
-});
+/* --- SWIPE (mobile) --- */
+let touchStartX = 0;
+let touchEndX = 0;
 
+popupImg.addEventListener('touchstart', (e) => {
+    touchStartX = e.changedTouches[0].screenX;
+}, { passive: true });
+
+popupImg.addEventListener('touchend', (e) => {
+    touchEndX = e.changedTouches[0].screenX;
+    handleSwipe();
+}, { passive: true });
+
+function handleSwipe() {
+    const swipeDistance = touchEndX - touchStartX;
+
+    if (Math.abs(swipeDistance) < 50) return; // seuil minimum
+
+    if (swipeDistance < 0) {
+        nextImage(); // swipe gauche → droite
+    } else {
+        prevImage(); // swipe droite → gauche
+    }
+}
 
 
 

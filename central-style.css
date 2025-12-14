@@ -4,7 +4,8 @@
     box-sizing: border-box;
 }
 
-header {
+
+header{
     background-image: url(img/bannn.png);
     background-size: contain;
     background-repeat: no-repeat;
@@ -12,7 +13,7 @@ header {
     height: 100px;
     margin: 20px;
     margin-top: 20px;
-    padding: 70px;
+    padding: 0px;
     border-radius: 5px;
 }
 .etxt{
@@ -176,7 +177,7 @@ header{
     height: 100px;
     margin: 20px;
     margin-top: 20px;
-    padding: 70px;
+    padding: 0px;
     border-radius: 5px;
 }
 

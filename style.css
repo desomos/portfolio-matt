@@ -72,6 +72,17 @@ section{
     box-shadow: 2px 0 10px rgba(0,0,0,0.5);
 }
 
+/* État normal */
+.tmax {
+    
+    top: 0;
+    width: 80%;
+    margin: auto;
+    z-index: 9999;
+}
+
+
+
 .menu-content ul {
     list-style: none;
     padding: 0;
@@ -151,7 +162,7 @@ header{
     height: 100px;
     margin: 20px;
     margin-top: 20px;
-    padding: 70px;
+    padding: 0px;
     border-radius: 5px;
 }
 
