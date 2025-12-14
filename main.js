@@ -1,6 +1,12 @@
+/* ================= POPUP ================= */
+
 const popup = document.querySelector('.popup-image');
 const popupImg = popup.querySelector('img');
 const images = Array.from(document.querySelectorAll('.image img'));
+
+const counter = popup.querySelector('.popup-counter');
+const nextButtons = popup.querySelectorAll('.popup-arrow.right');
+const prevButtons = popup.querySelectorAll('.popup-arrow.left');
 
 let currentIndex = 0;
 
@@ -10,11 +16,17 @@ images.forEach((img, index) => {
         currentIndex = index;
         showImage();
         popup.style.display = 'block';
+        document.body.classList.add('no-scroll');
     });
 });
 
+/* --- AFFICHAGE IMAGE + COMPTEUR --- */
 function showImage() {
     popupImg.src = images[currentIndex].dataset.full;
+
+    if (counter) {
+        counter.textContent = `${currentIndex + 1} / ${images.length}`;
+    }
 }
 
 /* --- FERMETURE POPUP --- */
@@ -22,6 +34,7 @@ popup.addEventListener('click', (e) => {
     if (e.target === popup) {
         popup.style.display = 'none';
         popupImg.src = '';
+        document.body.classList.remove('no-scroll');
     }
 });
 
@@ -36,7 +49,22 @@ function prevImage() {
     showImage();
 }
 
-/* --- CLAVIER (desktop) --- */
+/* --- FLÈCHES UI (desktop + mobile) --- */
+nextButtons.forEach(btn => {
+    btn.addEventListener('click', (e) => {
+        e.stopPropagation();
+        nextImage();
+    });
+});
+
+prevButtons.forEach(btn => {
+    btn.addEventListener('click', (e) => {
+        e.stopPropagation();
+        prevImage();
+    });
+});
+
+/* --- CLAVIER --- */
 document.addEventListener('keydown', (e) => {
     if (popup.style.display !== 'block') return;
 
@@ -45,31 +73,30 @@ document.addEventListener('keydown', (e) => {
     if (e.key === 'Escape') popup.click();
 });
 
-/* --- SWIPE (mobile) --- */
-let touchStartX = 0;
-let touchEndX = 0;
+/* --- TAP GAUCHE / DROITE (mobile) --- */
+popupImg.addEventListener('click', (e) => {
+    const rect = popupImg.getBoundingClientRect();
+    const clickX = e.clientX - rect.left;
 
-popupImg.addEventListener('touchstart', (e) => {
-    touchStartX = e.changedTouches[0].screenX;
-}, { passive: true });
-
-popupImg.addEventListener('touchend', (e) => {
-    touchEndX = e.changedTouches[0].screenX;
-    handleSwipe();
-}, { passive: true });
-
-function handleSwipe() {
-    const swipeDistance = touchEndX - touchStartX;
-
-    if (Math.abs(swipeDistance) < 50) return; // seuil minimum
-
-    if (swipeDistance < 0) {
-        nextImage(); // swipe gauche → droite
+    if (clickX < rect.width / 2) {
+        prevImage(); // tap gauche
     } else {
-        prevImage(); // swipe droite → gauche
+        nextImage(); // tap droite
     }
-}
+});
 
 
 
+/* ================= MENU ================= */
 
+const menuToggle = document.getElementById('menu-toggle');
+const menuOverlay = document.getElementById('menu-overlay');
+
+menuToggle.addEventListener('click', (e) => {
+    e.preventDefault();
+    menuOverlay.classList.toggle('active');
+});
+
+menuOverlay.addEventListener('click', () => {
+    menuOverlay.classList.remove('active');
+});
