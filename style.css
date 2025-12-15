@@ -74,9 +74,8 @@ section{
 
 /* État normal */
 .tmax {
-    
     top: 0;
-    width: 80%;
+    width: 70%;
     margin: auto;
     z-index: 9999;
 }
