@@ -271,7 +271,7 @@ header{
     color: white;
     cursor: pointer;
     user-select: none;
-    padding: 20px;
+    padding: 20px; 
     z-index: 200;
 }
 
